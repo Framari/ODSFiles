@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{362F4EB2-0249-4880-9FB0-9E6FD66201B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ODSFiles</RootNamespace>
+    <AssemblyName>ODSFiles</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetZip, Version=1.16.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetZip.1.16.0\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CellRanges\CellRange.cs" />
+    <Compile Include="CellRanges\CellRanges.cs" />
+    <Compile Include="Cells\Cell.cs" />
+    <Compile Include="Cells\Cells.cs" />
+    <Compile Include="Columns\Column.cs" />
+    <Compile Include="Columns\Columns.cs" />
+    <Compile Include="ConverterExcelCells.cs" />
+    <Compile Include="Document.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rows\Row.cs" />
+    <Compile Include="Rows\Rows.cs" />
+    <Compile Include="Sheets\Sheet.cs" />
+    <Compile Include="Sheets\Sheets.cs" />
+    <Compile Include="CellRanges\Tables\Table.cs" />
+    <Compile Include="CellRanges\Tables\Tables.cs" />
+    <Compile Include="Styles\CellStyle.cs" />
+    <Compile Include="Styles\CellProperties\Number.cs" />
+    <Compile Include="Styles\ColumnStyle.cs" />
+    <Compile Include="Styles\CellProperties\Paragrapgh.cs" />
+    <Compile Include="Styles\RowStyle.cs" />
+    <Compile Include="Styles\CellProperties\Text.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resorces\pattern\META-INF\manifest.xml" />
+    <EmbeddedResource Include="Resorces\pattern\mimetype" />
+    <EmbeddedResource Include="Resorces\pattern\meta.xml" />
+    <EmbeddedResource Include="Resorces\pattern\settings.xml" />
+    <EmbeddedResource Include="Resorces\pattern\styles.xml" />
+    <EmbeddedResource Include="Resorces\pattern\content.xml" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
